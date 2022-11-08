@@ -1,0 +1,47 @@
+<%-- 
+    Document   : addProject
+    Created on : 25-Jun-2022, 5:41:17 pm
+    Author     : praveen vuddagiri
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet"> 
+        <link href="css/addFaculty.css" rel="stylesheet">
+        <title>Get Project Details</title>
+    </head>
+    <body style="font-family: 'Poppins', sans-serif;">
+        <form method="post" action="addProject" enctype='multipart/form-data'>
+            <div class="wrapper rounded bg-white">
+
+                <div class="h3">Project Details </div>
+
+                <div class="form">
+                    <div class="col-md-12 mt-md-0 mt-3">
+                        <label>Select project description file</label>
+                        <input type="file"  class="form-control" name="c_pro" required>
+                    </div>
+                    <%
+                        String cid = request.getParameter("cid");
+                    %>
+                    <div class="col-md-12 mt-md-0 mt-3">
+                        <label>Course Id</label>
+                        <input type="text"  class="form-control" name="c_id" value="<%=cid%>" readonly>
+                    </div>
+
+                    <center><button style="margin-top: 20px;" type="submit" class="btn btn-danger" >Submit</button></center>
+                </div>
+
+            </div>
+        </form>
+    </body>
+</html>
